@@ -29,8 +29,10 @@ public class CustomUserDetailsService implements UserDetailsService{
 		Member member = userMapper.readUser(username);
 		if(member != null) {
 			member.setAuthorities(makeGrantedAuthority(userMapper.readAuthority(username)));
+			return new SecurityMember(member);
+		}else {
+			return new SecurityMember();
 		}
-		return new SecurityMember(member);
 	}
 	
 	private static List<GrantedAuthority> makeGrantedAuthority(List<String> roles){

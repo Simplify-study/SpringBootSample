@@ -9,7 +9,11 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
+import com.simplify.sample.handlers.CustomLoginFailureHandler;
+import com.simplify.sample.handlers.CustomLoginSuccessHandler;
 import com.simplify.sample.security.service.CustomUserDetailsService;
 
 @EnableWebSecurity
@@ -23,6 +27,16 @@ public class CustomWebSecurityConfigurerAdapter extends WebSecurityConfigurerAda
 	  return new BCryptPasswordEncoder();
 	}
 	
+	@Bean
+	public AuthenticationSuccessHandler successHandler() {
+	  return new CustomLoginSuccessHandler("/");
+	}
+	
+	@Bean
+	public AuthenticationFailureHandler failureHandler() {
+	  return new CustomLoginFailureHandler();
+	}
+	
 	@Override
 	public void configure(WebSecurity web) throws Exception {
 		web.ignoring()
@@ -31,7 +45,8 @@ public class CustomWebSecurityConfigurerAdapter extends WebSecurityConfigurerAda
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable().authorizeRequests().anyRequest().authenticated().and().formLogin();
+		http.csrf().disable().authorizeRequests().anyRequest().authenticated().and().formLogin()
+			.successHandler(successHandler()).failureHandler(failureHandler());
 	}
 
 	@Override
