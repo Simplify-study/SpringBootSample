@@ -26,7 +26,7 @@ public class CustomWebSecurityConfigurerAdapter extends WebSecurityConfigurerAda
 	@Override
 	public void configure(WebSecurity web) throws Exception {
 		web.ignoring()
-		.antMatchers("/openapi/**");
+		.antMatchers("/openapi/**", "/resources/**");
 	}
 	
 	@Override
