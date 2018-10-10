@@ -1,6 +1,14 @@
 spring.mvc.view.prefix: /WEB-INF/jsp/
 spring.mvc.view.suffix: .jsp
 
+restTemplate:
+  factory:
+    readTimeout: 5000 
+    connectTimeout: 3000
+  httpClient:
+    maxConnTotal: 100
+    maxConnPerRoute: 5 
+
 logging:
   path: c:/dev/log/spring
   file: log-file  

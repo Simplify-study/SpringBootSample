@@ -83,6 +83,13 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 		<!-- SECURITY -->
+		
+		<!-- APACHE HTTP CLIENT -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+        </dependency>
+        <!-- APACHE HTTP CLIENT -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
