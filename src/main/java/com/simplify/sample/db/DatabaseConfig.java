@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.simplify.sample.GlobalPropertySource;
+import com.simplify.sample.property.GlobalPropertySource;
 
 @Configuration
 @MapperScan(basePackages="com.simplify.sample")
