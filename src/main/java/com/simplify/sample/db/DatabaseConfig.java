@@ -17,7 +17,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.simplify.sample.property.GlobalPropertySource;
 
 @Configuration
-@MapperScan(basePackages="com.simplify.sample")
+//@MapperScan(basePackages="com.simplify.sample")
+@MapperScan(basePackages={"com.simplify.sample.db.mapper", "com.simplify.sample.security.mapper"})
 @EnableTransactionManagement
 public class DatabaseConfig {
 
