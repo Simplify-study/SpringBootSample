@@ -1,0 +1,19 @@
+spring.mvc.view.prefix: /WEB-INF/jsp/
+spring.mvc.view.suffix: .jsp
+
+logging:
+  path: c:/dev/log/spring
+  file: log-file  
+  
+---
+spring:
+  profiles: log-windows
+  
+logging:
+  path: c:/dev/log/spring
+---
+spring:
+  profiles: log-linux
+  
+logging:
+  path: /log/spring/
