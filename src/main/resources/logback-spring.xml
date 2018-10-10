@@ -22,6 +22,10 @@
 	
 	<springProfile name="log-console">
 		<include resource="appenders/appender-console.xml" />
+		<logger name="com.simplify" additivity="false">
+	        <level value="debug" />
+	        <appender-ref ref="CONSOLE" />
+	    </logger>
   		<root level="INFO">
   			<appender-ref ref="CONSOLE" />
   		</root>
