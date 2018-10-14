@@ -56,4 +56,4 @@ java -jar -Dspring.profiles.active=log-linux,log-jdbc,log-file ./SpringExample.j
 
 <p align="center">
   <img width="80%" src="./etc/img/001_run_configuration_for_sts.PNG">
-</p>
+</p> 
