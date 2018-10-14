@@ -52,8 +52,9 @@ log-console | Show logs in console(std-out)
 java -jar -Dspring.profiles.active=log-linux,log-jdbc,log-file ./SpringExample.jar
 ```
 
-#### How to run in STS
+#### How to run in STS (Run Configuration)
 
 <p align="center">
   <img width="80%" src="./etc/img/001_run_configuration_for_sts.PNG">
 </p> 
+
