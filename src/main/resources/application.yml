@@ -10,18 +10,18 @@ restTemplate:
     maxConnPerRoute: 5 
 
 logging:
-  path: c:/dev/log/spring
   file: log-file  
   
 ---
 spring:
-  profiles: log-windows
+  profiles: log-file-windows
   
 logging:
   path: c:/dev/log/spring
+
 ---
 spring:
-  profiles: log-linux
+  profiles: log-file-linux
   
 logging:
   path: /log/spring/

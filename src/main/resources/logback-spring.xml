@@ -3,6 +3,16 @@
 
 	<conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
 	
+	<!-- DEFAULT (non-profile) -->
+	<logger name="jdbc" level="OFF"/>
+    <logger name="jdbc.sqlonly" level="OFF"/>
+    <logger name="jdbc.sqltiming" level="OFF"/>
+    <logger name="jdbc.audit" level="OFF"/>
+    <logger name="jdbc.resultset" level="OFF"/>
+    <logger name="jdbc.resultsettable" level="OFF"/>
+    <logger name="jdbc.connection" level="OFF"/>
+    <!-- DEFAULT (non-profile) -->
+    
     <springProfile name="log-jdbc">
 	    <logger name="jdbc" level="OFF"/>
 	    <logger name="jdbc.sqlonly" level="OFF"/>
@@ -13,8 +23,14 @@
 	    <logger name="jdbc.connection" level="OFF"/>
     </springProfile>
     
-	<springProfile name="log-file">
-		<include resource="appenders/appender-file.xml" />
+	<springProfile name="log-file-win">
+		<include resource="appenders/appender-file-win.xml" />
+  		<root level="INFO">
+    		<appender-ref ref="FILE" />
+  		</root>
+	</springProfile>
+	<springProfile name="log-file-linux">
+		<include resource="appenders/appender-file-linux.xml" />
   		<root level="INFO">
     		<appender-ref ref="FILE" />
   		</root>
