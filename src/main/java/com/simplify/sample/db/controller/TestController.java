@@ -16,7 +16,7 @@ public class TestController {
 	@Autowired
 	TestService testService;
 	
-	@RequestMapping("/query")
+	@RequestMapping("openapi/query")
     public @ResponseBody List<Test> query() throws Exception{
         return testService.getAll();
     }
