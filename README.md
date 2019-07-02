@@ -58,3 +58,7 @@ java -jar -Dspring.profiles.active=log-file-linux,log-jdbc ./SpringExample.jar
 </p> 
 
  
+## Release Note
+
+#### 2019. 07. 03
+- Update Webhook (just for me)
