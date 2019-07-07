@@ -41,15 +41,14 @@ c:/dev/config.properties
 #### Available Profiles
 profile | Description
 --------|-------------
-log-windows | Write log files in c:/dev/log/spring
-log-linux | Write log files in /log/spring
+log-file-windows | Write log files in c:/dev/log/spring
+log-file-linux | Write log files in /log/spring
 log-jdbc | Show(Write) jdbc logs
-log-file | Write logs in files
 log-console | Show logs in console(std-out)
 
 #### Run Script
 ```
-java -jar -Dspring.profiles.active=log-linux,log-jdbc,log-file ./SpringExample.jar
+java -jar -Dspring.profiles.active=log-file-linux,log-jdbc ./SpringExample.jar
 ```
 
 #### How to run in STS (Run Configuration)
@@ -58,3 +57,9 @@ java -jar -Dspring.profiles.active=log-linux,log-jdbc,log-file ./SpringExample.j
   <img width="80%" src="./etc/img/001_run_configuration_for_sts.PNG">
 </p> 
 
+ 
+## Release Note
+
+#### 2019. 07. 03
+- Update Webhook (just for me)
+ 
