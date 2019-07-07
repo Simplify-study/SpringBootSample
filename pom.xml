@@ -107,7 +107,6 @@
 		</plugins>
 		
 		<finalName>SpringBootSample</finalName>
-		
 	</build>
 
 
