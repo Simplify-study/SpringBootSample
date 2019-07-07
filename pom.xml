@@ -105,6 +105,9 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		
+		<finalName>SpringBootSample</finalName>
+		
 	</build>
 
 
